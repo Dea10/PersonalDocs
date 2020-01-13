@@ -16,4 +16,5 @@ and the device is not reporting a CHARGING/NOT CHARGING status. I guess it's
 associated with the SDK initial config.
 
 Author: Daniel Espinosa Arias.
+
 Android Docs used: https://developer.android.com/training/monitoring-device-state/battery-monitoring
