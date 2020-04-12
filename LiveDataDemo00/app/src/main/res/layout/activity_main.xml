@@ -7,12 +7,35 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/mainTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/mainEditTextNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mainButtonSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sendInteger"
+        android:text="Send"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/mainEditTextNumber"
+        app:layout_constraintStart_toStartOf="@+id/mainEditTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/mainEditTextNumber" />
+
+    <EditText
+        android:id="@+id/mainEditTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/mainButtonSend"
+        app:layout_constraintEnd_toEndOf="@+id/mainTextView"
+        app:layout_constraintStart_toStartOf="@+id/mainTextView"
+        app:layout_constraintTop_toBottomOf="@+id/mainTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
