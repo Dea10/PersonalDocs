@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "176765093852",
+    "firebase_url": "https://coursesapp-32889.firebaseio.com",
+    "project_id": "coursesapp-32889",
+    "storage_bucket": "coursesapp-32889.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176765093852:android:665c06429469b181227119",
+        "android_client_info": {
+          "package_name": "com.example.coursesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176765093852-c8hllec8i9ndgpgv201aa5us5e4tjv6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHzQM0Q-boHOStvB9vHAkI-Nxxe0TsMRE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176765093852-c8hllec8i9ndgpgv201aa5us5e4tjv6v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
