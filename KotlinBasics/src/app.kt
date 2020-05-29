@@ -1,6 +1,8 @@
 fun main() {
     // variablesYConstantes()
-    tiposDeDatos()
+    // tiposDeDatos()
+    // sentenciaIf()
+    // sentenciaWhen()
 }
 
 private fun variablesYConstantes() {
@@ -61,4 +63,43 @@ private fun tiposDeDatos() {
     //val myBool03 = myBool + myBool02 Operaci[on no permitida con Bool
     println("${myBool} == ${myBool02} = ${myBool == myBool02}")
     println("${myBool} || ${myBool02} = ${myBool || myBool02}")
+}
+
+private fun sentenciaIf() {
+    val myNumber = 0
+    if(myNumber < 10) {
+        println("${myNumber} es menor que 10")
+    } else {
+        println("${myNumber} es mayor o igual a 10")
+    }
+
+    if(myNumber > 0) {
+        println("${myNumber} > 0")
+    } else if(myNumber > 5) {
+        println("${myNumber} > 5")
+    } else if(myNumber > 10) {
+        println("${myNumber} > 10")
+    } else {
+        println("${myNumber} <= 0")
+    }
+
+    // En el momento de entrar a uno de los bloques if, termina y ya no continúa evaluando
+}
+
+private fun sentenciaWhen() {
+    val country = "Argentina"
+
+    when(country) {
+        "Spain", "Argentina" -> { println("Spanish") }
+        "USA", "UK" -> { println("English") }
+        else -> { println("Error") }
+    }
+
+    val age = 0
+
+    when(age) {
+        in 0 .. 17 -> { println("(0, 17)") }
+        in 18 .. 69 -> { println("(18, 69)") }
+        else -> { println("Error") }
+    }
 }
