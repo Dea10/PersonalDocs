@@ -16,8 +16,6 @@ class CoursesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_courses)
 
-        // get Categories from Firebase
-
         setAdapter();
         bindUI();
 
@@ -90,24 +88,47 @@ class CoursesActivity : AppCompatActivity() {
     }
 
     fun addNewCourse(courseName : String, category: String, teacherName : String) {
+        cleanErrors()
+
         // validate null values
+        var notNullValues = false;
 
-        // create Course instance
+        if(!courseName.equals("") && !teacherName.equals("")) {
+            notNullValues = true;
+        }
 
-        // send Course instance to Firebase
-        val firebaseDatabase = FirebaseDatabase.getInstance()
+        if(courseName.equals("")) {
+            editTextCourseName.error = "Required field!"
+        }
 
-        val coursesDatabaseRef = firebaseDatabase.getReference("Courses")
-        val coursesByCategoryRef = firebaseDatabase.getReference("CoursesByCategory")
+        if (teacherName.equals("")) {
+            editTextTeacherName.error = "Required field"
+        }
 
-        // create Course instance
-        val courseObject = Course(courseName, category, teacherName)
+        if(notNullValues) {
+            val firebaseDatabase = FirebaseDatabase.getInstance()
 
-        // send Course instance
-        coursesDatabaseRef.push().setValue(courseObject)
+            val coursesDatabaseRef = firebaseDatabase.getReference("Courses")
+            val coursesByCategoryRef = firebaseDatabase.getReference("CoursesByCategory")
 
-        // update CoursesByCategory
-            // get Category id
-            // add Course
+            // create Course instance
+            val courseObject = Course(courseName, category, teacherName)
+
+            // send Course instance
+            coursesDatabaseRef.push().setValue(courseObject)
+            coursesByCategoryRef.child("${category}/").push().setValue(courseName)
+
+            cleanFields()
+        }
+    }
+
+    fun cleanErrors() {
+        editTextTeacherName.error = null
+        editTextCourseName.error = null
+    }
+
+    fun cleanFields() {
+        editTextCourseName.setText("")
+        editTextTeacherName.setText("")
     }
 }

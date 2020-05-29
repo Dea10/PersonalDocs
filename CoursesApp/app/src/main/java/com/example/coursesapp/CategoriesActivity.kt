@@ -27,6 +27,8 @@ class CategoriesActivity : AppCompatActivity() {
     }
 
     fun addNewCategory(category : String) {
+        cleanErrors()
+
         // validate null values
         if(!category.equals("")) {
             val firebaseDatabase = FirebaseDatabase.getInstance()
@@ -37,8 +39,17 @@ class CategoriesActivity : AppCompatActivity() {
 
             // send Category instance
             categoriesDatabaseRef.push().setValue(categoryObject)
+            cleanFields()
         } else {
             editTextNewCategory.error = "Required field!"
         }
+    }
+
+    fun cleanErrors() {
+        editTextNewCategory.error = null
+    }
+
+    fun cleanFields() {
+        editTextNewCategory.setText("")
     }
 }
