@@ -5,6 +5,7 @@ fun main() {
     // sentenciaWhen()
     // arrays()
     // maps()
+    loops()
 }
 
 private fun variablesYConstantes() {
@@ -171,4 +172,47 @@ private fun maps() {
     // Borrado de datos
     myMutableMap.remove("Daniel")
     println(myMutableMap)
+}
+
+private fun loops() {
+    val myArray : List<String> = listOf<String>("Daniel", "Espinosa", "Arias")
+    val myMap : MutableMap<String, Int> = mutableMapOf("Daniel" to 1, "Espinosa" to 2, "Arias" to 5)
+
+    // for
+    for (myString in myArray) {
+        println(myString)
+    }
+
+    for (myElement in myMap) {
+        println("${myElement.key} - ${myElement.value}")
+    }
+
+    for (x : Int in 0 .. 10) {
+        println(x)
+    }
+
+    for (x : Int in 0 until 10) {
+        println(x)
+    }
+
+    for (x : Int in 0 .. 10 step 2) {
+        println(x)
+    }
+
+    for (x : Int in 10 downTo 0 step 2) {
+        println(x)
+    }
+
+    val myNumericArray = (0 .. 5)
+    for (myElement in myNumericArray) {
+        println(myElement)
+    }
+
+    // while
+    println(" *** while *** ")
+    var x = 0
+    while (x<10) {
+        println(x)
+        x++
+    }
 }
