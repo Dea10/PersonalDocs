@@ -7,6 +7,7 @@ fun main() {
     // maps()
     // loops()
     // nullSafety()
+    funciones()
 }
 
 private fun variablesYConstantes() {
@@ -249,4 +250,18 @@ private fun nullSafety() {
     } ?: run {
         println(mySafetyString)
     }
+}
+
+private fun funciones() {
+    sayHello("Daniel", 27)
+    val result = sum(1,2)
+    println("result = ${result}")
+}
+
+private fun sayHello(name : String, age : Int) {
+    println("Hi ${name} - ${age}")
+}
+
+private fun sum(num1 : Int, num2 : Int) : Int {
+    return num1 + num2
 }
