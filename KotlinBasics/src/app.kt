@@ -7,7 +7,8 @@ fun main() {
     // maps()
     // loops()
     // nullSafety()
-    funciones()
+    // funciones()
+    classes()
 }
 
 private fun variablesYConstantes() {
@@ -264,4 +265,17 @@ private fun sayHello(name : String, age : Int) {
 
 private fun sum(num1 : Int, num2 : Int) : Int {
     return num1 + num2
+}
+
+private fun classes() {
+    val daniel = Programmer("Daniel", 27, arrayOf(Programmer.Language.KOTLIN, Programmer.Language.JAVA), arrayOf(Programmer("Ferchito", 26, arrayOf(Programmer.Language.JAVASCRIPT))))
+    println(daniel.name)
+    daniel.age = 28
+
+    val sara = Programmer("Sara", 35, arrayOf(Programmer.Language.JAVA))
+
+    daniel.code()
+    sara.code()
+
+    println(daniel.friends?.first()?.name)
 }
