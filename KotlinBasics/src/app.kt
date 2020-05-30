@@ -4,6 +4,7 @@ fun main() {
     // sentenciaIf()
     // sentenciaWhen()
     // arrays()
+    // maps()
 }
 
 private fun variablesYConstantes() {
@@ -139,4 +140,35 @@ private fun arrays() {
     }
 
     println(myArray.last())
+}
+
+private fun maps() {
+    var myMap : Map<String, Int> = mapOf()
+    println(myMap)
+
+    // Añadir elementos
+    myMap = mapOf("Daniel" to 1, "Pedro" to 2)
+    println(myMap)
+
+    // Añadir un solo valor
+    // myMap["Ana"] = 7 No podemos agregar nuevos valores porque no es un Map Mutable
+
+    var myMutableMap  = mutableMapOf<String, Int>()
+    myMutableMap = mutableMapOf("Daniel" to 1, "Pedro" to 2)
+    println(myMutableMap)
+    myMutableMap["Ana"] = 7
+    myMutableMap.put("Maria", 8)
+    println(myMutableMap)
+
+    // Actualizar un dato
+    myMutableMap.put("Daniel", 3)
+    myMutableMap.put("Pedro", 3)
+    println(myMutableMap)
+
+    // Acceso a un dato
+    println(myMutableMap["Daniel"])
+
+    // Borrado de datos
+    myMutableMap.remove("Daniel")
+    println(myMutableMap)
 }
