@@ -5,7 +5,8 @@ fun main() {
     // sentenciaWhen()
     // arrays()
     // maps()
-    loops()
+    // loops()
+    // nullSafety()
 }
 
 private fun variablesYConstantes() {
@@ -214,5 +215,38 @@ private fun loops() {
     while (x<10) {
         println(x)
         x++
+    }
+}
+
+private fun nullSafety() {
+    var myString = "Daniel"
+    // myString = null Null pointer exception
+    println(myString)
+
+    // variable nullSafety
+    var mySafetyString : String?= "Daniel null safety"
+    mySafetyString = null
+    println(mySafetyString)
+
+    mySafetyString = "Espinosa"
+    // println(mySafetyString)
+
+    // println(mySafetyString!!)
+
+    /*
+    if(mySafetyString != null) {
+        println(mySafetyString!!)
+    } else {
+        println(mySafetyString)
+    }
+    */
+
+    // safe call
+    println(mySafetyString?.length)
+
+    mySafetyString?.let {
+        println(it)
+    } ?: run {
+        println(mySafetyString)
     }
 }
