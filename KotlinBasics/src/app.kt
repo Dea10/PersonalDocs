@@ -3,6 +3,7 @@ fun main() {
     // tiposDeDatos()
     // sentenciaIf()
     // sentenciaWhen()
+    // arrays()
 }
 
 private fun variablesYConstantes() {
@@ -102,4 +103,40 @@ private fun sentenciaWhen() {
         in 18 .. 69 -> { println("(18, 69)") }
         else -> { println("Error") }
     }
+}
+
+private fun arrays() {
+    val name = "Daniel"
+    val surname = "Espinosa"
+    val company = "RC"
+    val age = "27"
+
+    val myArray : ArrayList<String> = arrayListOf<String>()
+
+    myArray.add(name)
+    myArray.add(surname)
+    myArray.add(company)
+    myArray.add(age)
+
+    println(myArray)
+
+    // Añadir conjunto de datos
+    myArray.addAll(listOf("hola", "hola2"))
+    println(myArray)
+
+    // Acceso a datos
+    println(myArray[0])
+
+    myArray[myArray.size -1] = "adiós"
+    println(myArray)
+
+    myArray.removeAt(myArray.size -1)
+    println(myArray)
+
+    // Recorrer datos
+    myArray.forEach {
+        println(it)
+    }
+
+    println(myArray.last())
 }
